@@ -1,0 +1,28 @@
+{
+  "name": "nextdeadline-api",
+  "version": "1.0.0",
+  "description": "backend part of the NextDeadline project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimgoja/NextDeadline-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ibrahimgoja/NextDeadline-api/issues"
+  },
+  "homepage": "https://github.com/ibrahimgoja/NextDeadline-api#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "pg": "^8.21.0"
+  }
+}
