@@ -7,6 +7,7 @@ import authRoutes from './routes/auth.js'
 import semesterRoutes from './routes/semesters.js'
 import courseRoutes from './routes/courses.js'
 import enrollmentRoutes from './routes/enrollments.js'
+import assignmentRoutes from './routes/assignments.js'
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use("/api/auth", authRoutes);
 app.use('/api/semesters', semesterRoutes);
 app.use('/api/courses', courseRoutes);
 app.use('/api/enrollments', enrollmentRoutes);
+app.use('/api/assignments', assignmentRoutes);
 
 db.connect()
     .then(() => {
