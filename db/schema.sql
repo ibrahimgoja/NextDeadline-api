@@ -69,3 +69,17 @@ CREATE TABLE materials (
     description TEXT,
     created_at TIMESTAMP DEFAULT NOW()
 );
+
+-- ===== ASSIGNMENT PROGRESS (per student) =====
+CREATE TABLE assignment_progress (
+    id SERIAL PRIMARY KEY,
+    assignment_id INT NOT NULL REFERENCES assignments(id) ON DELETE CASCADE,
+    student_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    status VARCHAR(20) DEFAULT 'To Do' CHECK (status IN ('To Do', 'In Progress', 'Completed')),
+    completed_at TIMESTAMP,
+    created_at TIMESTAMP DEFAULT NOW(),
+    UNIQUE(assignment_id, student_id)
+);
+
+ALTER TABLE tasks ADD COLUMN IF NOT EXISTS assignment_id INT REFERENCES assignments(id) ON DELETE SET NULL;
+ALTER TABLE tasks ADD COLUMN IF NOT EXISTS description TEXT;
