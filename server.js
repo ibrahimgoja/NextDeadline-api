@@ -5,6 +5,7 @@ import morgan from 'morgan'
 import db from './db/dbConnection.js'
 import authRoutes from './routes/auth.js'
 import semesterRoutes from './routes/semesters.js'
+import courseRoutes from './routes/courses.js'
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(morgan('dev'));
 
 app.use("/api/auth", authRoutes);
 app.use('/api/semesters', semesterRoutes);
+app.use('/api/courses', courseRoutes);
 
 db.connect()
     .then(() => {
